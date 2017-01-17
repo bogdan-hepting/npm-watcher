@@ -13,6 +13,7 @@ That's it, you now have all of the node modules required, basic Drupal theme fil
 
 
 ## Npm commands
+We use npm scripts instead of Gulp or Grunt.
 
 ### Build styles
 ```
@@ -46,38 +47,15 @@ file watcher.
 
 
 ## Foundation
-If you want to use Foundation you can install it with bower
-```
-bower install foundation --save
-```
-Add `paths.bowerDir + '/foundation/scss'` to the `includePaths` array in `____gulpfile.js`.
+Foundation already included to `package.json` file and used by `scss`.
 
-Copy `./bower_components/foundation/scss/foundation/_settings.scss` to `./sass/base/_settings.scss`.
-
-Create a file `./sass/base/_app.scss` and use [this](https://github.com/zurb/foundation-compass-template/blob/master/scss/app.scss) as a template. This partial contains the settings import and all of the foundation components imports. You can include all or include only what you like.
-
-In your style.scss file add `@import "base/app";` after the `base` and `normalize` imports.
-
-Add any of the scripts you want to include to the `scriptsSrc` array in `____gulpfile.js` config.
+All you need is edit two files  `./sass/base/_settings.scss` and `./sass/base/_app.scss`. The last one partial contains the settings import and all of the foundation components imports. You can include all or include only what you like.
 
 Lastly, if you are using any javascript components, you must initialize foundation on DOM ready.
-
 ```
 $(document).foundation();
 ```
 
-
-
 ## Legacy Breakpoints
 Foundation 6 has a great system for breakpoints which allows you to define them in sass and use them in javascript. The downside to Foundation in general is that there is no support for legacy browsers like IE8. [ResponseKit](https://github.com/tandroid1/ResponseKit) is a library that was created to provide very similar breakpoint functionality but with support for no-query fallbacks. 
-
-You can install ResponseKit in a similar manner to Foundation:
-
-- Run `bower install --save https://github.com/tandroid1/ResponseKit.git`
-- Add `paths.bowerDir + '/foundation/scss'` to the `includePaths` array in `____gulpfile.js`.
-- Add `paths.bowerDir + '/ResponseKit/js/responseKit.js'` to the `scriptsSrc` array in `____gulpfile.js`.
-- In your `style.scss` add `@import "breakpoints"` at the top of your imports.
-
-
-
 
