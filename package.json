@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git@github.com:bogdan-hepting/npm-watcher.git"
   },
   "dependencies": {},
   "devDependencies": {
